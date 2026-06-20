@@ -9,9 +9,9 @@ services:
     volumes:
       - ./:/var/www/html/ # Ánh xạ code
     environment:
-      DB_HOST: db      # Tên service của database trong Docker
-      DB_USER: root
-      DB_PASS: root
+      DB_HOST: "db"
+      DB_USER: "root"
+      DB_PASS: "root"
     depends_on:
       - db
 
