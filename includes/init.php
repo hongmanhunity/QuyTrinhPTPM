@@ -2,7 +2,11 @@
 // includes/init.php
 session_start();
 
-define('BASE_URL', '/QuanLyCuaHang');
+if (getenv('DB_HOST')) {
+    define('BASE_URL', ''); // Chạy trong Docker
+} else {
+    define('BASE_URL', '/QuanLyCuaHang'); // Chạy trong XAMPP
+}
 define('ROOT_PATH', dirname(__DIR__));
 
 require_once ROOT_PATH . '/config/db.php';
